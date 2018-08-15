@@ -43,6 +43,42 @@ The *parametric* approach to estimating the *model* $f$ reduces the problem down
 
 ### Non-parametric methods
 
-Non-parametric methods do not make explicit asumptions about the functional form or shape of $f$.
+- Non-parametric methods do not make explicit asumptions about the functional form or shape of $f$.
+- They serve as a universal function approximator, therefore they can potentially describe data way better than models that are constrained by an assumption.
+- **But**
+	- They need more data to be trained. I.e. Far more observations are needed in order to obtain an accurate estimate for $f$.
+	- Also they are much more interpretable and therfore more suitable for *inference*
+
+---
+### Regression Versus Classification Problems
+
+Variables can be characterized as either *quantitative* or *qualitative* (also known as *categorical*).
+- Quantitative variables take on numerical value such as height or income.
+- Qualitative variables take on values in one of K different *classes* such as male/female or yes/no.
+- Problems with a *quantitative response* (*label*) are referred to as **regression**
+- Problems with a *qualitative response* (*label*) are reffered to as **classification**
+
+---
+### Estimating Performance
+Most common measure is *mean squared error* (MSE) $$MSE=\frac{1}{n}\sum_{i=1}^{n}{(y_i-\hat{f}(x_i))^{2}}.$$We need to differ between *training error* and *test error*. The *training error* tells us how good a model describes the training data. But In reality we almost always want to know how good a model describes unseen examples. (See Overfitting Problem and Bias/Variance Tradeoff)
+
+(Some Notes missing)
+
+---
+### Bias Variance Tradeoff
+ 
+
+
+
+---
+
+## Learning Algorithms
+| Name | Supervised/Unsupervised | Regression/Classification | Interpretable/Accurate | Parametric/Non-Parametric |
+| --- | --- | --- | --- | --- | --- |
+| Logistic Regression | Supervised | Classification |  |   |   |
+| Least squares linear regression | Supervised | Regression | Interpretable | Parametric |   |
+| Thin-plate Spline | - | - | - | Non-parametric |   |
+| K-Nearest Neighbor | Unsupervised | Classification | Interpretable | - |   |
+| Lasso | Supervised |   |   |   |   |
 
 ---
