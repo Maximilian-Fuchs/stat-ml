@@ -36,7 +36,7 @@ In Advertising: Where the *dataset* consists of *features* in form of spendings 
 
 ### Parametric Methods
 2 Steps:
-  1. We make an assumption about the form or shape of $f$ (the *model*). FOr example that $f$ is linear in $X$: $$f(X)=\beta_0+\beta_1X_1+\beta_2X_2+\ldots+\beta_pX_p$$. Once we assumed that $f$ is linear, all we have to do is to estimate the coefficients $\beta_0, \beta_1, \ldots, \beta_p$
+  1. We make an assumption about the form or shape of $f$ (the *model*). FOr example that $f$ is linear in $X$: $$f(X)=\beta_0+\beta_1X_1+\beta_2X_2+\ldots+\beta_pX_p.$$Once we assumed that $f$ is linear, all we have to do is to estimate the coefficients $\beta_0, \beta_1, \ldots, \beta_p$
   2. After a *model* has been selected we nee a procedure or *learning algorithm* that uses the *training data* to *fit* or *train* the *model*. That is, we want to estimate the parameters $\beta_0, \beta_1, \ldots, \beta_p$. That is, we want to find values of these parameters such that $$Y\approx \beta_0+\beta_1X_1+\beta_2X_2+\ldots+\beta_pX_p$$. The most common approach referred to as *(ordinary) least squares*
 
 The *parametric* approach to estimating the *model* $f$ reduces the problem down to estimating a set of parameters, which is much easyer than the problem of estimating an entirely arbitrary function $f$.
