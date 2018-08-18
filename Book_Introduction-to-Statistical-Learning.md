@@ -66,6 +66,87 @@ Most common measure is *mean squared error* (MSE) $$MSE=\frac{1}{n}\sum_{i=1}^{n
 
 ---
 ### Bias Variance Tradeoff
+The expected test MSE for a given value $x_0$ can always be decomposed into the sum of three fundamental quantities: $$E(y_0-\hat{f}(x_0))^2=Var(\hat{f}(x_0))+[Bias(\hat{f(x_0)})]^2+Var(\epsilon).$$Where $E(y_0-\hat{f}(x_0))^2$ refers to the average test MSE that we would obtain if we repeatedly estimated $f$ using a large number of training sets and tested each at $x_0$.
+The Overall expected test MSE can be computed by averaging $E(y_0-\hat{f}(x_0))^2$ over all possible values in the test set.
+In order to get a good preiction model we need to select a *statistical learning method* (*learning algorithm*) that simultaneously achieves *low variance* and *low bias*.
+
+##### Variance
+Refers to the amount by which $\hat{f}$ will change if we estimated it, using a different training set.
+Ideally the estimate for $f$ should not vary to much between training sets.
+If a model has *high variance* small changes in the training data canresult in large changes in $\hat{f}$. 
+In general more flexible statistical methods have higher variance.
+
+##### Bias
+*Bias* refers to the error that is introduced by approximating a complicated problem by a much simpler model.
+
+---
+
+### The Classification Setting
+The error for a classification problem is commonly calculated with the *error rate*:
+$$E=\frac{1}{n}\sum_{i=1}^{n}{I(y_i\neq\hat{y}_i)}$$ where $I(y_i \neq \hat{y}_i)$ stands for the indicator variable that is 1 if $y_i \neq \hat{y}_i$ an 0 otherwise.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
