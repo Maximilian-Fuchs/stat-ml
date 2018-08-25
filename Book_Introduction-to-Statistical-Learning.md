@@ -73,17 +73,32 @@ In order to get a good preiction model we need to select a *statistical learning
 ##### Variance
 Refers to the amount by which $\hat{f}$ will change if we estimated it, using a different training set.
 Ideally the estimate for $f$ should not vary to much between training sets.
-If a model has *high variance* small changes in the training data canresult in large changes in $\hat{f}$. 
+If a model has *high variance* small changes in the training data canresult in large changes in $\hat{f}$.
 In general more flexible statistical methods have higher variance.
 
 ##### Bias
 *Bias* refers to the error that is introduced by approximating a complicated problem by a much simpler model.
 
 ---
-
 ### The Classification Setting
-The error for a classification problem is commonly calculated with the *error rate*:
-$$E=\frac{1}{n}\sum_{i=1}^{n}{I(y_i\neq\hat{y}_i)}$$ where $I(y_i \neq \hat{y}_i)$ stands for the indicator variable that is 1 if $y_i \neq \hat{y}_i$ an 0 otherwise.
+
+The difference to regression problems is that the _response_ (_label_) is _qualitative_ instead of _quantitative_. That means the _response_ can have one of _n_ values from a set of values.
+
+#### Error
+
+The error for a classification problem is commonly calculated with the _error rate_: $$E=\frac{1}{n}\sum_{i=1}^{n}{I(y_i\neq\hat{y}_i)}$$ where $I(y_i \neq \hat{y}_i)$ stands for the indicator variable that is 1 if $y_i \neq \hat{y}_i$ an 0 otherwise.
+
+#### Classification Goals
+
+- Build a classifier $C(X)$ that assigns a label from a set of labels to an unseen example $X$
+
+- Assess the uncertainty in each classification
+
+i- Understand the roles of the different _predictors_ (_features_) among $X=(X_1, X_2, \ldots, X_p)$ 
+	- i.e. Find out which feature contributes most to the decision. (See *inference*)
+
+
+
 
 
 
