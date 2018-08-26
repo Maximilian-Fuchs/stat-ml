@@ -109,8 +109,15 @@ $$max(Pr(Y=j|X=x_0))$$ Where $j$ is a class, $x_0$ is a given *feature vector*. 
 ###### Example
 
 If we have only 2 classes ($j\in{1,2}$) the *Bayes Classifier* predicts class $1$ if $Pr(Y=1|X=x_0) > 0.5$ and class $2$ otherwise.
-The *decision boundary* is at each value of $x$ where the *conditional probability* is exactly $0.5$. 
+The *Bayes decision boundary* is at each value of $x$ where the *conditional probability* is exactly $0.5$. 
 
+###### Bayes Error Rate
+
+*skipped*
+
+something like: $1 - 1/N \sum_{n=0}^{N}{max_j Pr(Y=j|X=x_n)}$, meaning the difference to 1 for the Probability of the predicted class. Which is equal to the *irreducable error*
+
+---
 
 
 
