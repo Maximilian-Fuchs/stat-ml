@@ -111,13 +111,43 @@ $$max(Pr(Y=j|X=x_0))$$ Where $j$ is a class, $x_0$ is a given *feature vector*. 
 If we have only 2 classes ($j\in{1,2}$) the *Bayes Classifier* predicts class $1$ if $Pr(Y=1|X=x_0) > 0.5$ and class $2$ otherwise.
 The *Bayes decision boundary* is at each value of $x$ where the *conditional probability* is exactly $0.5$. 
 
+###### Conditional Probability
+
+$$P(B|A)=\frac{P(B\wedgeA)}{P(A)} = \frac{P(B)P(A)}{P}$$
+
+```py
+cancer_data = [{"blood_test": "Positive", "cancer": "Yes"},
+              {"blood_test": "Negative", "cancer": "Yes"},
+              {"blood_test": "Positive", "cancer": "No"},
+              {"blood_test": "Negative", "cancer": "No"}]
+
+# calculate the probability of cancer given a test result based on the cancer data
+
+# calculate P(cancer=yes)
+p_cancer = len([entry for entry in cancer_data if entry["cancer"] == "Yes"]) / len(cancer_data)
+print(p_cancer)
+
+# P(test = positive)
+p_test = len([entry for entry in cancer_data if entry["blood_test"] == "Positive"]) / len(cancer_data)
+print(p_test)
+
+# calculate P(cancer|test=Positive)
+p_cancer_and_test = len([entry for entry in cancer_data
+                         if entry["cancer"] == "Yes" and entry["blood_test"] == "Positive"]) / len(cancer_data)
+p_cancer_given_test = p_cancer_and_test/p_test
+print(p_cancer_given_test)
+```
+
+
 ###### Bayes Error Rate
 
 *skipped*
 
-something like: $1 - 1/N \sum_{n=0}^{N}{max_j Pr(Y=j|X=x_n)}$, meaning the difference to 1 for the Probability of the predicted class. Which is equal to the *irreducable error*
+something like: $1 - \frac{1}{N} \sum_{n=0}^{N}{max_j Pr(Y=j|X=x_n)}$, meaning the difference to 1 for the Probability of the predicted class. Which is equal to the *irreducable error*
 
 ---
+
+#### K-means Clustering
 
 
 
