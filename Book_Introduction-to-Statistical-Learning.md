@@ -99,7 +99,7 @@ The error for a classification problem is commonly calculated with the _error ra
 
 ---
 
-#### The Bayes Classifier
+#### The Bayes Optimal Classifier
 
 A simple classifier can be implemented by assigning each *observation* (*unlabled example*) the most likely class given it's *predicor values* (*feature values*).
 
