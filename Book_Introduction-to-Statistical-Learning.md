@@ -106,6 +106,10 @@ A simple classifier can be implemented by assigning each *observation* (*unlable
 $$max(Pr(Y=j|X=x_0))$$ Where $j$ is a class, $x_0$ is a given *feature vector*. Calculate the *conditional probability* for all classes and choose the class where the *conditional probability* is largest.
 
 
+###### Example
+
+If we have only 2 classes ($j\in{1,2}$) the *Bayes Classifier* predicts class $1$ if $Pr(Y=1|X=x_0) > 0.5$ and class $2$ otherwise.
+The *decision boundary* is at each value of $x$ where the *conditional probability* is exactly $0.5$. 
 
 
 
