@@ -99,6 +99,11 @@ The error for a classification problem is commonly calculated with the _error ra
 
 ---
 
+#### The Bayes Classifier
+
+A simple classifier can be implemented by assigning each *observation* (*unlabled example*) the most likely class given it's *predicor values* (*feature values*).
+
+$$max(Pr(Y=j|X=x_0))$$ Where $j$ is a class, $x_0$ is a given *feature vector*. Calculate the *conditional probability* for all classes and choose the class where the *conditional probability* is largest.
 
 
 
@@ -169,7 +174,7 @@ The error for a classification problem is commonly calculated with the _error ra
 
 ---
 
-## Learning Algorithms
+#### Learning Algorithms
 | Name | Supervised/Unsupervised | Regression/Classification | Interpretable/Accurate | Parametric/Non-Parametric |
 | --- | --- | --- | --- | --- | --- |
 | Logistic Regression | Supervised | Classification |  |   |   |
@@ -179,3 +184,8 @@ The error for a classification problem is commonly calculated with the _error ra
 | Lasso | Supervised |   |   |   |   |
 
 ---
+
+#### Questions
+
+- What is the difference between Likelihood and Probability? (Does the most likely class mean it is the class witrh the highest probability given its *predictors* (*features*)?)
+
