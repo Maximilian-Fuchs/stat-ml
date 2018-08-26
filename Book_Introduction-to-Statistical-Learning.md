@@ -94,7 +94,7 @@ The error for a classification problem is commonly calculated with the _error ra
 
 - Assess the uncertainty in each classification
 
-- Understand the roles of the different _predictors_ (_features_) among $X=(X_1, X_2, \ldots, X_p)$ 
+- Understand the roles of the different _predictors_ (_features_) among $X=(X_1, X_2, \ldots, X_p)$
 	- i.e. Find out which feature contributes most to the decision. (See *inference*)
 
 ---
@@ -109,11 +109,11 @@ $$max(Pr(Y=j|X=x_0))$$ Where $j$ is a class, $x_0$ is a given *feature vector*. 
 ###### Example
 
 If we have only 2 classes ($j\in{1,2}$) the *Bayes Classifier* predicts class $1$ if $Pr(Y=1|X=x_0) > 0.5$ and class $2$ otherwise.
-The *Bayes decision boundary* is at each value of $x$ where the *conditional probability* is exactly $0.5$. 
+The *Bayes decision boundary* is at each value of $x$ where the *conditional probability* is exactly $0.5$.
 
 ###### Conditional Probability
 
-$$P(B|A)=\frac{P(B\wedgeA)}{P(A)} = \frac{P(B)P(A)}{P}$$
+$$P(B|A)=\frac{P(B \wedge A)}{P(A)} = \frac{P(B)P(A)}{P}$$
 
 ```py
 cancer_data = [{"blood_test": "Positive", "cancer": "Yes"},
@@ -229,4 +229,3 @@ something like: $1 - \frac{1}{N} \sum_{n=0}^{N}{max_j Pr(Y=j|X=x_n)}$, meaning t
 #### Questions
 
 - What is the difference between Likelihood and Probability? (Does the most likely class mean it is the class witrh the highest probability given its *predictors* (*features*)?)
-
