@@ -94,9 +94,10 @@ The error for a classification problem is commonly calculated with the _error ra
 
 - Assess the uncertainty in each classification
 
-i- Understand the roles of the different _predictors_ (_features_) among $X=(X_1, X_2, \ldots, X_p)$ 
+- Understand the roles of the different _predictors_ (_features_) among $X=(X_1, X_2, \ldots, X_p)$ 
 	- i.e. Find out which feature contributes most to the decision. (See *inference*)
 
+---
 
 
 
