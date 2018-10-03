@@ -103,12 +103,12 @@ The error for a classification problem is commonly calculated with the _error ra
 
 A simple classifier can be implemented by assigning each *observation* (*unlabled example*) the most likely class given it's *predicor values* (*feature values*).
 
-$$max(Pr(Y=j|X=x_0))$$ Where $j$ is a class, $x_0$ is a given *feature vector*. Calculate the *conditional probability* for all classes and choose the class where the *conditional probability* is largest.
+$$\max(\Pr(Y=j|X=x_0))$$ Where $j$ is a class, $x_0$ is a given *feature vector*. Calculate the *conditional probability* for all classes and choose the class where the *conditional probability* is largest.
 
 
 ###### Example
 
-If we have only 2 classes ($j\in{1,2}$) the *Bayes Classifier* predicts class $1$ if $Pr(Y=1|X=x_0) > 0.5$ and class $2$ otherwise.
+If we have only 2 classes ($j\in{1,2}$) the *Bayes Classifier* predicts class $1$ if $\Pr(Y=1|X=x_0) > 0.5$ and class $2$ otherwise.
 The *Bayes decision boundary* is at each value of $x$ where the *conditional probability* is exactly $0.5$.
 
 ###### Conditional Probability
@@ -121,10 +121,17 @@ cancer_data = [{"blood_test": "Positive", "cancer": "Yes"},
               {"blood_test": "Positive", "cancer": "No"},
               {"blood_test": "Negative", "cancer": "No"}]
 
-# calculate the probability of cancer given a test result based on the cancer data
+# calculate the probability of cancer
+# given a test result
+# based on the cancer data
+
+# get list of entrys
+# from cancer_data
+# where attribute "cancer" is "yes"
+cancer_entries = [entry for entry in cancer_data if entry["cancer"] == "Yes"]
 
 # calculate P(cancer=yes)
-p_cancer = len([entry for entry in cancer_data if entry["cancer"] == "Yes"]) / len(cancer_data)
+p_cancer = len(cancer_entries) / len(cancer_data)
 print(p_cancer)
 
 # P(test = positive)
@@ -143,11 +150,18 @@ print(p_cancer_given_test)
 
 *skipped*
 
-something like: $1 - \frac{1}{N} \sum_{n=0}^{N}{max_j Pr(Y=j|X=x_n)}$, meaning the difference to 1 for the Probability of the predicted class. Which is equal to the *irreducable error*
+something like: $1 - \frac{1}{N} \sum_{n=0}^{N}{max_j \Pr(Y=j|X=x_n)}$, meaning the difference to 1 for the Probability of the predicted class. Which is equal to the *irreducable error*
 
 ---
 
-#### K-means Clustering
+#### $K$-means Clustering
+
+We predict the the class for example $x_0$ by identifying the classes of the $K$ "nearest" examples in the data set and assigning the majority class.
+
+Statistically we can write this as $$ \Pr(Y = j| X = x_0) = \frac{1}{K}\sum_{i \in N_0}{I(y_i = j)} $$ Where $N_0$ represents the $K$ nearest *examples* (*data points*) from the *dataset*.We calculate the probability for each *class* $j$ and *predict* the one with the highest probability.
+
+How we define "near" is another story. There a books just about distance measures. Commonly the *euclidian distance* and the *manhattan distance* are being used.
+
 
 
 
