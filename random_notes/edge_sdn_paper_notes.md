@@ -6,7 +6,7 @@ It's about Peering-/Edge- Routers that connect Facebook's Points of Presence to 
 ![](PoP.png)
 The set opf these routers across all Points of Presence is generaly referred to as *the edge*.
 
-The authors write about a §System allows them to centrally control these routers and, by that, have better control over the traffic flows that leave theire AS.
+The authors write about a §system that allows them to centrally control these routers and, by that, have better control over traffic flows that leave theire AS (egress traffic). 
 
 ---
 
@@ -19,13 +19,26 @@ Ports on a router (which connect to a Peer/IXP/Transit) have limited capacity in
 The authors also mention *congested paths*. Meaning that ports on some router (in a different AS) may congest and therefore throttle the transmission. The authors present a real-time meausurement method for path performance in theire paper.
 
 ---
+The authors present a system with following key functions:
+
+**Can overwrite BGP's best path selection**
+
+---
 
 The authors present a system with following key features:
 
+**Performance- and capacity-awareness**
+
+
 **Near real-time performance**
 
+---
 
-**asd**
+The authors also show in their paper the network connectivity and trafiic characteristics that 'make it challenging to manage egress trafiic'. Those are the following:
+
+**asd **
+
+---
 
 Points of Presence
 =================
