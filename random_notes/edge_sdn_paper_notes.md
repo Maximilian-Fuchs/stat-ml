@@ -36,7 +36,7 @@ The authors present a system with following key features:
 
 The authors also show in their paper the network connectivity and trafiic characteristics that 'make it challenging to manage egress trafiic'. Those are the following:
 
-**asd **
+**as**
 
 ---
 
@@ -44,6 +44,27 @@ Points of Presence
 =================
 ![](PoP.png)
 Points of Presence (PoP) are globally distributed servers and network components (see pic). Their main purpose is to reduce latencies of internet applications.
+
+**PoPs reduce traffic in two ways:**
+
+1. 'They cache content to serve user requests directly.' By serving user requests, from a PoP, the latency is reduced as the request passes less hops.
+
+2. 'When a user needs to communicate with a data center, the users TCP Connection terminates at the PoP'. This reduces latency in two ways: First, the TLS (Transport Layer Security) negotiation, which involves several round trips, is performed between geographically near endpoints. And second because Facebook can impose specialised mechanisms§ (like handling packet loss) on the long distance transmission if these happen on theire private network.
+
+**PoP Ingress traffic is controlled by DNS**
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 The Paper goes into detail about how PoPs provide value to their (traffics performance§).
 
