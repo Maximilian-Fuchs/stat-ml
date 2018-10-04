@@ -16,7 +16,7 @@ The challenges that large content providers face on theire edge include:
 Ports on a router (which connect to a Peer/IXP/Transit) have limited capacity in bit/s. As BGP is not capacity aware, a router that solely relies on BGP to make forwarding decisions, may congest ports§. If a port congests, packets are being queued, which increases latency and decreases bandwidth for all transmissions that pass this port.
 
 **Congested paths**  
-The authors also mention *congested paths*. Meaning that ports on some router (in a different AS) may congest and therefore throttle the transmission. The authors present a real-time meausurement method for path performance in theire paper.
+The authors also mention *congested paths*. Meaning that ports on some router (in a different AS) may congest and therefore throttle the transmission. This phenomenon is also known as *downstream congestion*. The authors present a real-time meausurement method for path performance in theire paper.
 
 ---
 The authors present a system with following key functions:
@@ -88,12 +88,19 @@ Router exchanges BGP announcements and connects via the shared fabric of an [IXP
 **Route Server Peering**  
 Router receives BGP announcements indirectly via a [route server](#Route Server) and exchanges traffic across the IXP fabric. 
 
-**Traffic share over interconnection types for Facebook PoPs**
- 
-From the table in the edge fabric paper we can see that most traffic is usually exchanged via private peering. Most connections to peers are of the public peering type though. From this difference I ponder, that there must be something about the private peers that makes them more suitable to route egress traffic to them. Probably the eyeball networks all have a private peering and there are just more requests from private peering networks. I wonder why public peering does not directly imply a route server connection.
+**Traffic share over interconnection types for Facebook PoPs**  
+From the table in the edge fabric paper we can see that most traffic is usually exchanged via private peering. Most connections to peers are of the public peering type though. From this difference I ponder, that there must be something about the private peers that makes them more suitable to route egress traffic to them. Probably the eyeball networks all have a private peering and there are just more requests from private peering networks. I wonder why public peering does not directly imply a route server connection.  
 
+**A PoP may maintain multiple BGP peering sessions with the same AS**  
+For example private + public peering.  
+Facebooks PoPs also connect to 2+ transit providers and each transit provider is connected to 2+ edge routers for capacity and failure resilience.  
 
+The authors write that their preference by connection type in paths for the same AS is as follows: private peers > public peers > route
+server.  
+Facebooks preference of peer over transit comes from the fact that peers expect facebook traffic via peering link and it was found that peer routes generally perform better and have lower risk of *downstream congestion*.  
+Preference of private over public peering comes from respecting that the peer dedicated resources to receive traffic from facebook. Also to avoid *cross congestion* (§What do they mean by this?).
 
+If there are multiple shortest paths, facebook edge routers distribute traffic across all of them.
 
 ---
 
