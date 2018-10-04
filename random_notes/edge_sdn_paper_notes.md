@@ -88,6 +88,13 @@ Router exchanges BGP announcements and connects via the shared fabric of an [IXP
 **Route Server Peering**  
 Router receives BGP announcements indirectly via a [route server](#Route Server) and exchanges traffic across the IXP fabric. 
 
+**Traffic share over interconnection types for Facebook PoPs**
+ 
+From the table in the edge fabric paper we can see that most traffic is usually exchanged via private peering. Most connections to peers are of the public peering type though. From this difference I ponder, that there must be something about the private peers that makes them more suitable to route egress traffic to them. Probably the eyeball networks all have a private peering and there are just more requests from private peering networks. I wonder why public peering does not directly imply a route server connection.
+
+
+
+
 ---
 
 Edge Router
