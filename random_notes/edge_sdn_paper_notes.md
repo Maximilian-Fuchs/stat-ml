@@ -53,7 +53,7 @@ Points of Presence (PoP) are globally distributed servers and network components
 
 **Request-routing**
 
-The PoPs described in the Espresso paper(§) use [DNS Request-routing](#CDN Request-routing). A load balacer decides based on user-sided connectivity measurements which PoP to route the request to. Usually a user network will contain to a single PoP during one day.
+The PoPs described in the Edge Fabric paper(§) use [DNS Request-routing](#CDN Request-routing). A load balacer decides based on user-sided connectivity measurements which PoP to route the request to. Usually a user network will contain to a single PoP during one day.
 
 ---
 
