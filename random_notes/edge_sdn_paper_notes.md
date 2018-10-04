@@ -12,10 +12,10 @@ The authors write about a §system that allows them to centrally control these r
 
 The challenges that large content providers face on theire edge include:
 
-**Congested ports**
+**Congested ports**  
 Ports on a router (which connect to a Peer/IXP/Transit) have limited capacity in bit/s. As BGP is not capacity aware, a router that solely relies on BGP to make forwarding decisions, may congest ports§. If a port congests, packets are being queued, which increases latency and decreases bandwidth for all transmissions that pass this port.
 
-**Congested paths**
+**Congested paths**  
 The authors also mention *congested paths*. Meaning that ports on some router (in a different AS) may congest and therefore throttle the transmission. The authors present a real-time meausurement method for path performance in theire paper.
 
 ---
@@ -51,21 +51,45 @@ Points of Presence (PoP) are globally distributed servers and network components
 
 2. 'When a user needs to communicate with a data center, the users TCP Connection terminates at the PoP'. This reduces latency in two ways: First, the TLS (Transport Layer Security) negotiation, which involves several round trips, is performed between geographically near endpoints. And second because Facebook can impose specialised mechanisms§ (like handling packet loss) on the long distance transmission if these happen on theire private network.
 
-**PoP Ingress traffic is controlled by DNS**
+**Request-routing**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-The Paper goes into detail about how PoPs provide value to their (traffics performance§).
+The PoPs described in the Espresso paper(§) use [DNS Request-routing](#CDN Request-routing). A load balacer decides based on user-sided connectivity measurements which PoP to route the request to. Usually a user network will contain to a single PoP during one day.
 
 ---
+
+CDN Request-routing
+===================
+
+Three types are listed by Wichtluhuber(§):
+
+1. DNS Request-routing
+
+2. HTTP Request-routing
+
+3. Anycast Request-routing
+
+---
+
+Interdomain Connectivity
+========================
+
+[Peering-/Edge-routers](#Edge Router) connect to other ASes via different types of connections:
+
+**Private Peering**  
+Router connects to peer via a dedicated [PNI](#Private Network Interconnect)
+
+**Public Peering**
+Router exchanges BGP announcements and connects via the shared fabric of an [IXP](#IXP)
+
+**Transit**  
+'Transit providers provide routes to all prefixes via a [PNI](#Private Network Interconnect) with dedicated capacity just for traffic between the customer AS (Facebook) and the provider'
+
+**Route Server Peering**  
+Router receives BGP announcements indirectly via a [route server](#Route Server) 
+
+---
+
+Edge Router
+===========
+![](EdgeRouter.png)
+
