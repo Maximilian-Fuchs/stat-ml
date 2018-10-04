@@ -55,6 +55,7 @@ Points of Presence (PoP) are globally distributed servers and network components
 
 The PoPs described in the Edge Fabric paper(§) use [DNS Request-routing](#CDN Request-routing). A load balacer decides based on user-sided connectivity measurements which PoP to route the request to. Usually a user network will contain to a single PoP during one day.
 
+
 ---
 
 CDN Request-routing
@@ -85,7 +86,7 @@ Router exchanges BGP announcements and connects via the shared fabric of an [IXP
 'Transit providers provide routes to all prefixes via a [PNI](#Private Network Interconnect) with dedicated capacity just for traffic between the customer AS (Facebook) and the provider'
 
 **Route Server Peering**  
-Router receives BGP announcements indirectly via a [route server](#Route Server) 
+Router receives BGP announcements indirectly via a [route server](#Route Server) and exchanges traffic across the IXP fabric. 
 
 ---
 
