@@ -14,6 +14,9 @@ Thereby Facebook uses interdomain connectivity to improve their performanc. That
 
 ---
 
+Challenges
+----------
+
 The challenges that large content providers face on theire edge include:
 
 **Congested ports**  
@@ -44,12 +47,10 @@ They came to following conclusions:
 
 ---
 
-
----
-
 The authors present a system with following key functions:
 
 **Can overwrite BGP's best path selection**  
+
 
 ---
 
@@ -57,7 +58,23 @@ The authors present a system with following key features:
 
 **Performance- and capacity-awareness**  
 
-**Near real-time performance**  
+**Near real-time performance** §
+
+**Operates on a per PoP basis**  
+The appropriate PoP to handle a request is selected by [CDN Request Routing](#CDN Request-routing), which is not part of *Edge Fabric*. *Edge Fabric* is only responsible for egress traffic. Therefore it's suitable to only operate on a per-PoP granularity.  
+This design brings several benefits:
+- Colocation of components
+- Reducing dependencies on remote systems
+- Reducing scope and complexity of decision process
+- Restart and reconfiguration in isolation. (Similar benefits as microservice architecture)
+
+**Leverages existing vendor software and hardware**  
+BGP announcements are being used by the controller, to control the Edge Routers. The controller will announce routes with high ``local_pref`` which will influence the routers best path selection.
+
+**Centralized instead of distributed control mechanism (SDN approach)**  
+Reduces complexity and allows for faster developement.
+
+**Real time user-perceived performance measurements of multiple paths**  
 
 ---
 
