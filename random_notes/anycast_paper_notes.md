@@ -27,7 +27,12 @@ Measurement Methods
 2. RIPE Atlas measurements
 - Augments the root DNS dataset with active measurements to account for latency and alternative paths.
 - Includes periodical (CHAOS) queries and traceroutes from 10000 locations in 180 countries and 3587 ASs to all DNS root servers
-- 
+    - CHAOS queries usually return a txt that identifies the replica.
+
+3. "Own measurements"
+- Augment the ripe atlas measurements to account for alternative paths and addresses ...
+
+
 -------------------
 # Facts (to be filed)
 
