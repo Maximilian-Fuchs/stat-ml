@@ -16,8 +16,14 @@ OSI Model
 Network Layer
 =============
 
+Summary
+-------
+
+Network Layer organizes a packet stream between end systems.
+
 Functions
 ---------
+**Connection between end systems**
 - (subnets) with packets
 - routing i.e. among others
   - fixed routes / dynamic routes / routes defined during connect
@@ -33,5 +39,32 @@ Functions
 
 ---
 
+
 Transport Layer
 ===============
+
+Summary
+-------
+
+Transport Layer organizes an end2end msg. stream between individual processes.
+
+Functions
+---------
+**Connection from source to destination**
+- Optimize required quality of service and congestion
+  - 1 L4 connection corresponds to 1 L3 Connection
+- Increase throughput
+  - 1 L4 connection uses several L3 connections
+- Minimize costs:
+  -  several L4 connections multiplexed onto 1 L3 connection
+- process addressing, connection management, error correction
+- flow control (fast sender, slow receiver)
+- TCP, UDP
+
+---
+
+Data Units
+==========
+
+
+  
