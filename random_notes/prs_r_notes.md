@@ -2,6 +2,7 @@ Useful stuff
 ============
 
 - [Lecture on Inter-domain routing and path selection](https://www.inet.tu-berlin.de/fileadmin/fg234_teaching/SS11/IR_SS11/ir11_07_bgp.pdf)
+    - Background zum Nachschlagen
 - [Pre-Endeavour Publication](https://www.h2020-endeavour.eu/sites/www.h2020-endeavour.eu/files/u69/endeavour-UC.commmag.pdf)
     - Figure 1 shows the link between SDX controller, Route Server and Customers
         - This is the area I'm supposed to examine
