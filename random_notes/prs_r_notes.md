@@ -21,7 +21,15 @@ improve if not revolutionize inter-domain routing."
     
 - Open question: With do much research done on the control plane of sdn switches, does a sdx rs need the same amount of considerations? Which are those
     - In order to understand that, I'd need to know more about the problems, solutions and considerations of the sdn switch research area.
-        - lecture and jeremias    
+        - lecture and jeremias  
+
+Route Selection Goals
+=====================
+
+Who has which route selection goals in the Internet?
+
+- Which granularity is sensible/measurable?
+
     
 
 
